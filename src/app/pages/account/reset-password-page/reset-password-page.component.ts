@@ -11,7 +11,7 @@ import { CustomValidator } from 'src/app/validators/custom.validators';
 })
 export class ResetPasswordPageComponent implements OnInit {
   public form: FormGroup;
-  public busy: false;
+  public busy= false;
 
   constructor(
     private router: Router,
@@ -31,5 +31,23 @@ export class ResetPasswordPageComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  submit() {
+    this.busy = true;
+    this
+      .service
+      .resetPassword(this.form.value)
+      .subscribe(
+        (data: any) => {
+          this.busy = false;
+          this.toastr.success(data.message, 'Senha Restaurada');
+        },
+        (err) => {
+          console.log(err);
+          this.busy = false;
+        }
+      );
+  }
+
 
 }
