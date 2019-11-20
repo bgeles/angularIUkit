@@ -19,6 +19,8 @@ import { ProductCardComponent } from './components/store/product-card/product-ca
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { MaskDirective } from './directives/mask.directive';
 import { AuthService } from './services/auth.service';
+import { DataService } from './services/data.service';
+import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { AuthService } from './services/auth.service';
     CartPageComponent,
     FramePageComponent,
     ProductCardComponent,
-    LoadingComponent
+    LoadingComponent,
+    ProfilePageComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +47,7 @@ import { AuthService } from './services/auth.service';
     ToastrModule.forRoot(),
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [DataService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

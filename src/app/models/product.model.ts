@@ -3,5 +3,6 @@ export class Product {
     public title: string;
     public category: string;
     public description: number;
-    public image: string;
+    public price: number;
+    public images: string[];
 }

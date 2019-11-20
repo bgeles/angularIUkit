@@ -65,6 +65,7 @@ export class LoginPageComponent implements OnInit {
         },
         (err) => {
           console.log(err);
+          this.busy = false;
         }
       );
   }

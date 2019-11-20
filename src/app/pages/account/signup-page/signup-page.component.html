@@ -10,11 +10,17 @@
       <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
         <h3 class="uk-card-title">Cadastre-se</h3>
         <div class="uk-margin">
-          <input class="uk-input uk-form-large" formControlName="name" type="text" placeholder="Nome"
+          <input class="uk-input uk-form-large" 
+          formControlName="name" 
+          type="text" 
+          placeholder="Nome"
           [ngClass]="{'uk-form-danger': (!form.controls.name.valid && !form.controls.name.pristine) }">
         </div>
         <div class="uk-margin">
-          <input class="uk-input uk-form-large" formControlName="email" type="email" placeholder="E-mail"
+          <input class="uk-input uk-form-large" 
+          formControlName="email" 
+          type="email" 
+          placeholder="E-mail"
           [ngClass]="{'uk-form-danger': (!form.controls.email.valid && !form.controls.email.pristine) }">
         </div>
         <div class="uk-margin">
@@ -29,7 +35,9 @@
           [ngClass]="{'uk-form-danger': (!form.controls.password.valid && !form.controls.password.pristine) }">
         </div>
         <div class="uk-margin uk-text-right">
-          <button class="uk-button uk-button-default" [disabled]="form.invalid" (click)="submit()">Cadastrar</button>
+          <button class="uk-button uk-button-default" 
+          [disabled]="form.invalid" 
+          (click)="submit()">Cadastrar</button>
         </div>
       </div>
     </form>
